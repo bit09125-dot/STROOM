@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | StroomCo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<button class="toggle" onclick="toggleTheme()">◐</button>
+<video autoplay muted loop playsinline class="bg-video"><source src="videos/855191-hd_1920_1080_25fps.mp4" type="video/mp4"></video>
+<div class="overlay"></div>
+
+<div class="page">
+  <nav class="navbar">
+    <a href="index.html" class="logo">StroomCo<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn outline small">Logout</a>
+    </div>
+  </nav>
+
+  <section class="page-content glass animate" style="max-width:800px;margin:120px auto;">
+    <h1>Dashboard</h1>
+    <p>Welcome back! Check out our portfolio by clicking the projects down below.</p>
+      <div class="portfolio-grid">
+    <a href="project-website.html" class="portfolio-card">Website</a>
+    <a href="project-app.html" class="portfolio-card">App UI/UX</a>
+    <a href="project-brand.html" class="portfolio-card">Brand Identity</a>
+    </div>
+  </section>
+</div>
+
+<a href="https://wa.me/254724006805" target="_blank" class="whatsapp">💬</a>
+
+<script>
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("show"); }); });
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+function toggleTheme(){document.body.classList.toggle("light");}
+</script>
+</body>
+</html>
+async function fetchMessages(){
+  const res = await fetch("https://your-backend-url/api/messages");
+  const messages = await res.json();
+
+  const container = document.querySelector("#messages");
+  messages.forEach(msg => {
+    const div = document.createElement("div");
+    div.classList.add("portfolio-card", "glass");
+    div.innerHTML = `<strong>${msg.name} (${msg.email})</strong><p>${msg.message}</p>`;
+    container.appendChild(div);
+  });
+}
+
+fetchMessages();

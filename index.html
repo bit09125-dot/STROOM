@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StroomCo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<button class="toggle" onclick="toggleTheme()">◐</button>
+<video autoplay muted loop playsinline class="bg-video"><source src="videos/855191-hd_1920_1080_25fps.mp4" type="video/mp4"></video>
+<div class="overlay"></div>
+
+<div class="page">
+  <nav class="navbar">
+    <a href="index.html" class="logo">StroomCo<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn outline small">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero animate">
+    <h1>We Build<br><span>Digital Experiences</span></h1>
+    <p>Websites • Apps • Branding</p>
+    <div class="buttons">
+      <a href="contact.html" class="btn primary">Get a Quote</a>
+      <a href="portfolio.html" class="btn outline">View Work</a>
+    </div>
+  </section>
+</div>
+
+<a href="https://wa.me/254745236097" target="_blank" class="whatsapp">💬</a>
+
+<script>
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add("show"); }); });
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+function toggleTheme(){document.body.classList.toggle("light");}
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<h2>Admin Dashboard</h2>
+
+<h3>Add Project</h3>
+<input id="client" placeholder="Client Email">
+<input id="name" placeholder="Project Name">
+<button onclick="addProject()">Add</button>
+
+<script>
+function addProject() {
+  fetch("/projects/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: Date.now(),
+      client: client.value,
+      name: name.value,
+      status: "Pending"
+    })
+  });
+}
+</script>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("show");
+  });
+});
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+</script>
+</body>
+<nav class="navbar">
+  <a href="index.html" class="logo">StroomCo<span>.</span></a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="btn outline small">Login</a>
+  </div>
+</nav>

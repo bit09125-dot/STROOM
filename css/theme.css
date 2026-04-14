@@ -64,3 +64,23 @@ body.light .glass { background: rgba(255,255,255,0.7); }
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   color: beige;
 }
+body {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}

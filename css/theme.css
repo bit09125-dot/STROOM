@@ -59,28 +59,45 @@ body.light .glass { background: rgba(255,255,255,0.7); }
 .portfolio-card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.portfolio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  color: beige;
-}
-body {
-  margin: 0;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 10px;
+
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .hero h1, .page-content h1, .page-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p, .page-content p {
+    font-size: 1rem;
+  }
+
+  .buttons a, .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .services, .portfolio-grid {
+    width: 95%;
+  }
+
+  .whatsapp {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }
